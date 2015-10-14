@@ -131,4 +131,8 @@ Sau lệnh rebuild, gói binary vừa tạo ra được đặt trong /usr/src/re
 
 - Kiểm tra tính toàn vẹn: Khi một gói phần mềm được cài đặt vào trong máy, cơ sở dữ liệu RPM lưu thông tin về từng file của gói phần mềm đó. Có 8 trường thông tin cho mỗi file: file size, file permission, mã md5 được tính ra từ nội dung file, major/minor number (nếu file đó là device file), đối tương được trỏ đến bởi file (nếu file là symbolic linkk), chủ sở hữu file, nhóm chủ sở hữu file, quyền truy cập file. RPM cũng lưu thông tin về kiểu file (kiểu file ở đây không phải là kiểu file của Linux mà là kiểu file trong gói phần mềm): file cấu hình, file tài liệu hướng dẫn, file ảo (xuất hiện sau khi đã cài package, không nằm trong package nguyên thủy), file chứa thông tin bản quyền, file readme. Khi verify file, 8 trường thông tin của file sẽ được so sánh với thông tin lưu trong RPM database. Nếu khớp sẽ hiển thị dấu chấm, không khớp sẽ hiển thị kí hiệu của trường thông tin trước đó, nếu không kiểm tra được sẽ hiển thị dấu ?.
 
+##3.5 Cài đặt với YUM
 
+- YUM (Yellowdog Updater Modified) là phương pháp cài đặt phần mềm có xu hướng tự động hóa và tập trung hóa. Người dùng chỉ việc đánh lệnh, và yum sẽ kết nối với server cập nhập, cài đặt hay gỡ bỏ phần mềm dựa trên những thông tin về các gói cài đặt sẵn có trên Interner
+- Các thông số:
+Cài đặt/Cập nhập/Gỡ bỏ cơ bản
