@@ -115,3 +115,20 @@ Ví dụ:
 - cd vào thư mục đã mount (/media), tìm gói tương ứng muốn cài và gõ rpm -i <tên gói>
 
 - Việc cài đặt một package sẽ xảy ra thất bại khi xảy ra một trong 3 điều sau
+<ul>
+<li>Package xxx is already installed: Package cần cài đã được cài đặt rồi. Giải quyết bằng cách: không cài nữa hoặc cài đè lên thì thêm tham số --replacepkgs hoặc -force.</li>
+<li>Conflicting file: Package đang cần ghi một file vào một nơi đã có file khác trùng tên rồi. Giải quyết bằng cách không cài nữa hoặc ghi đè lên file đã có sẵn bằng cách thêm tham số --replacefiles.</li>
+<li>Failed dependecncy: Package cần cài phụ thuộc vào package khác chưa được cài trước đó. Cách giải quyết là cài package phụ thuộc vòng: gói A phục thuộc B, B phụ thuộ C, C phụ thuộc A. Để cài được gó A chỉ viêc cài đồng thời cả 3 gói A, B, C tức là rpm -ivh A B C. Có thể dùng kí tự đại diện *, ? để cài đồng thời nhiều gói cùng 1 lúc.</li>
+</ul>
+
+- Cài gói rpm ở dạng source code .src.rpm
+
+- Có nhiều khi gói phần mềm rpm được cung cấp ở dạng source code, tên những gói này có phần đuôi là .src.rpm. Trước hết cần build nó thành một gói binary rpm bằng lệnh:
+
+**rpm -rebuild filename.src.rpm**
+
+Sau lệnh rebuild, gói binary vừa tạo ra được đặt trong /usr/src/redhat/RPM/; chỉ cần vào thư mục này và cài gói vừa tạo ra như bình thường.
+
+- Kiểm tra tính toàn vẹn: Khi một gói phần mềm được cài đặt vào trong máy, cơ sở dữ liệu RPM lưu thông tin về từng file của gói phần mềm đó. Có 8 trường thông tin cho mỗi file: file size, file permission, mã md5 được tính ra từ nội dung file, major/minor number (nếu file đó là device file), đối tương được trỏ đến bởi file (nếu file là symbolic linkk), chủ sở hữu file, nhóm chủ sở hữu file, quyền truy cập file. RPM cũng lưu thông tin về kiểu file (kiểu file ở đây không phải là kiểu file của Linux mà là kiểu file trong gói phần mềm): file cấu hình, file tài liệu hướng dẫn, file ảo (xuất hiện sau khi đã cài package, không nằm trong package nguyên thủy), file chứa thông tin bản quyền, file readme. Khi verify file, 8 trường thông tin của file sẽ được so sánh với thông tin lưu trong RPM database. Nếu khớp sẽ hiển thị dấu chấm, không khớp sẽ hiển thị kí hiệu của trường thông tin trước đó, nếu không kiểm tra được sẽ hiển thị dấu ?.
+
+
