@@ -92,8 +92,26 @@ http://prntscr.com/8r4kkj
 
 - Gõ rpm: lệnh cài đặt gói rpm, một số option hay dùng như sau:
 <ul>
-<li></li>
-<li></li>
-<li></li>
-<li></li>
+<li>-i <gói> cài đặt</li>
+<li>-e <tên phần mềm> gỡ bỏ</li>
+<li>-U <gói> cập nhập gói(gỡ gói cũ và cài gói mới)</li>
+<li>-q <tên phần mềm> in ra tên, phiên bản release, nếu đã được cài</li>
+<li>-p <tên gói> in ra thông tin của cả những gói chưa được cài, nhưng phải chỉ rõ đường dẫn <tên gói></li>
+<li>-i <tên phần mềm> in ra thoogn tin, nếu đã được cài</li>
+<li>-V kiểm tra tính toàn vẹn</li>
+<li>--nodeps không kiểm tra các gói phụ thuộc khi cài đặt và cập nhập cũng như gỡ bỏ</li>
+<li>--force cài đặt, cập nhập và bỏ cũ</li>
+<li>--import nhập GPG Key(/etc/pki/rpm-gpg/RPM_GPG_KEY-CENTOS-<version>)</li>
+<li>--replacefiles giải quyết khi có đụng độ trong việc ghi files cho gói cài đặt</li>
 </ul>
+
+Ví dụ:
+      rpm -ivh <gói>
+      rpm -e -nodeps <tên phần mềm>
+      
+###3.4.2 Cài đặt từ DVD/CD của Centos và rpm
+
+- Mount DVD, CD
+- cd vào thư mục đã mount (/media), tìm gói tương ứng muốn cài và gõ rpm -i <tên gói>
+
+- Việc cài đặt một package sẽ xảy ra thất bại khi xảy ra một trong 3 điều sau
