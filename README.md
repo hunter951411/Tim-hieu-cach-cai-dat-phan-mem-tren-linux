@@ -273,11 +273,11 @@ Có 2 dạng nén thông thường là gzip(thường) và bzip2 (mạnh hơn)
 
 - gõ **#gzip <file>** sẽ nén file và tạo ra file.gz đồng thời xóa file đi 
 
-<img src="http://prntscr.com/8r4hba">
+<img src="http://i.imgur.com/8pmMwp8.png">
 
 - Hoặc **#gzip -c file1 file2 > filenen.gz** sẽ nén và gộp file <flie1> <file2> và tạo ra <output> nhưng vấn giữ lại file1 và file2
 
-<img src="http://prntscr.com/8r4kkj">
+<img src="http://i.imgur.com/hk11U8s.png">
 
 - Hoặc **gzip -r <thư mục cần nén>** Nén thư mục
 
