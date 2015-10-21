@@ -145,7 +145,7 @@ Sau lệnh rebuild, gói binary vừa tạo ra được đặt trong /usr/src/re
 <li>Lệnh cài đặt EPEL Repository cho HĐH CENTOS 64 bit: **#rpm -Uvh http://pkgs.repoforge.org/rpmforge-release/rpmforge-release-0.5.3-1.el4.rf.x86_64.rpm**</li>
 </ul>
 
-##1. Lệnh **yum check-update** và **yum list updates**
+##1. Lệnh yum check-update và yum list updates
 
 - Là lệnh có chức năng tương tự như nhau là dùng để cập nhật thông tin và danh sách các gói phần mềm được hỗ trợ cài đặt bằng lệnh YUM. Lưu ý là dòng lệnh này không cài đặt phần mềm mà chỉ là cập nhật danh sách các phần mềm được hỗ trợ của YUM. Cú pháp:
 
@@ -153,7 +153,7 @@ Sau lệnh rebuild, gói binary vừa tạo ra được đặt trong /usr/src/re
 
       **#yum list updates**
 
-##2. Lệnh **yum list all và **yum list**
+##2. Lệnh yum list all và yum list
 
 - Là lệnh dùng để liệt kê tất cả các gói phần mềm có thể được cài đặt bằng lệnh YUM và những phần mềm đã được cài đặt. Cú pháp:
 
@@ -161,39 +161,39 @@ Sau lệnh rebuild, gói binary vừa tạo ra được đặt trong /usr/src/re
 
       **#yum list**
 
-##3. Lệnh **yum list installed**
+##3. Lệnh yum list installed
 
 - Là lệnh liệt kê tất cả các phần mềm đã được cài đặt. Nếu bạn muốn kiểm tra phần mềm nào đó đã cài đặt hay chưa thì có thể dùng lệnh sau :
 
       **#yum list installed tên_phần_mềm**
 
-##4. Lệnh **yum list available**
+##4. Lệnh yum list available
 
 - Là lệnh liệt kê tất cả các phần mềm có thể cài đặt bằng lệnh YUM. Cú pháp:
 
       **#yum list available**
 
-##5. Lệnh **yum info**
+##5. Lệnh yum info
 
 - Là lệnh dùng để xem thông tin của gói phần mềm. Ví dụ lệnh trên là để xem thông tin của phần mềm nginx. Cú pháp:
 
       **#yum info nginx**
 
 
-##6. Lệnh **yum search**
+##6. Lệnh yum search
 
 - Là lệnh dùng để tìm kiếm gói phần mềm được hỗ trợ cài đặt bằng yum. Ví dụ lệnh trên là để tìm phần mềm nginx, tất cả những phần mềm có tên file hoặc thông tin có chứa ký tự nginx sẽ được liệt kê bên dưới. Cú pháp:
 
       **#yum search tên_phần_mềm**
 
-##7. Lệnh **yum install**
+##7. Lệnh yum install
 
 - Là lệnh dùng để cài đặt gói phần mềm do bạn chỉ định. Cú pháp:
 
       **#yum install tên_phần_mềm**
 
 
-##8. Lệnh **yum update**
+##8. Lệnh yum update
 
 - Là lệnh dùng để kiểm tra và cập nhật phiên bản mới nhất của gói phần mềm. Nó sẽ cập nhật phiên bản mới nhất cho tất cả các gói phần mềm đã được cài đặt trên server. 
  
@@ -204,13 +204,13 @@ Sau lệnh rebuild, gói binary vừa tạo ra được đặt trong /usr/src/re
       **#yum update tên_phần_mềm**
 
 
-##9. Lệnh **yum remove**
+##9. Lệnh yum remove
 
 - Là lệnh dùng để gỡ bỏ và xoá gói phần mềm do bạn chỉ định.
 
       **#yum remove tên_phần_mềm**
       
-##10.Lệnh **yum clean all**
+##10.Lệnh yum clean all
 
 - Thông thường YUM sẽ tạo và sử dụng cache cho các lần truy vấn, để xoá hết cache của yum thì bạn chạy lệnh sau :
 
