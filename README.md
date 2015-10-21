@@ -43,9 +43,11 @@ Tất cả các lệnh được nói đến đều phải chạy với tài kho�
 
 ###1.3.1 Lệnh cài đặt
 
-**#sudo apt-get install tên_gói** 
-      
-- Cài đặt một gói mới.
+- Ta dùng lệnh:
+
+      **#sudo apt-get install tên_gói** 
+
+- Để cài đặt một gói mới.
 
       **#sudo apt-get build-dep tên_gói** 
 
@@ -67,8 +69,8 @@ Tất cả các lệnh được nói đến đều phải chạy với tài kho�
 
 ###1.3.3 Lệnh bảo quản
 
-      
-**#sudo apt-get update**
+-       
+      **#sudo apt-get update**
 
 - Chạy lệnh này sau khi thay đổi /etc/apt/sources.list hoặc /etc/apt/preferences. Sử dụng lệnh này thường xuyên giúp danh sách nguồn của bạn được cập nhật. 
 
@@ -203,7 +205,9 @@ Tất cả các lệnh được nói đến đều phải chạy với tài kho�
 - Là lệnh dùng để liệt kê tất cả các gói phần mềm có thể được cài đặt bằng lệnh YUM và những phần mềm đã được cài đặt. Cú pháp:
 
       **#yum list all**
-
+      
+      và
+      
       **#yum list**
 
 ##2.4. Lệnh yum list installed
@@ -390,55 +394,52 @@ Có 2 dạng nén thông thường là gzip(thường) và bzip2 (mạnh hơn)
 
 **Bước 2:** Giải nén tập tin
 
-#unzip                   để giải nén                       name_package.zip
-
-#tar -xvzf             đẻ giải nén                       name_package.tar.gz
-
-#tar -jvxf              để giải nén                       name_package.tar.bz2
-
-#tar -x                   để giải nén                       name_package.tgz
+**#unzip                   để giải nén                       name_package.zip**
+**#tar -xvzf             đẻ giải nén                       name_package.tar.gz**
+**#tar -jvxf              để giải nén                       name_package.tar.bz2**
+**#tar -x                   để giải nén                       name_package.tgz**
 
 **Bước 3:** Tạo thư mục để cài phần mềm
 
-Tạo thư mục httpd trong thư mục /usr/local/
+- Tạo thư mục httpd trong thư mục /usr/local/
 
-Sử dụng lệnh #ll để kiểm tra thư mục vừa tạo
+- Sử dụng lệnh #ll để kiểm tra thư mục vừa tạo
 
 **Bước 4:** Vào thư mục vừa giải nén để chuẩn bị biên dịch
 
-[root@localhost ~]# cd httpd-2.4.10
+**#cd httpd-2.4.10**
 
-Các bạn đọc file README hoặc INSTALL để xem hướng dẫn cài đặt.
+- Các bạn đọc file README hoặc INSTALL để xem hướng dẫn cài đặt.
 
-[root@localhost httpd-2.4.10]# vi README
-[root@localhost httpd-2.4.10]# vi INSTALL
+**#vi README**
+**#vi INSTALL**
 
 **Bước 5:** Cấu hình cho gói phần mềm (Bước này xảy ra lỗi nhiều nhất)
 
-[root@localhost httpd-2.4.10]# ./configure –prefix=/usr/local/httpd/ –with-included-apr
+**# ./configure –prefix=/usr/local/httpd/ –with-included-apr**
 
-#–prefix là nơi sẽ cài phần mềm vào giống như chọn đường dẫn để cài phần mềm trong windows.
+**–prefix** là nơi sẽ cài phần mềm vào giống như chọn đường dẫn để cài phần mềm trong windows.
 
-#–with-included-apr: trong tập tin INSTALL có hướng dẫn là tải apr và apr-util rồi copy vào /httpd-2.4.10/srclib/
+**–with-included-apr:** trong tập tin INSTALL có hướng dẫn là tải apr và apr-util rồi copy vào /httpd-2.4.10/srclib/
 
 **Bước 6:** Biên dịch cho gói phần mềm:
 
-#make
+- make
 
-[root@localhost httpd-2.4.10]# make
+**# make**
 
 **Bước 7:** Cài đặt gói phần mềm httpd vừa biên dịch:
 
-#make install
+- make install
 
-[root@localhost httpd-2.4.10]# make install
+**#make install**
 
-Khởi động dịch vụ httpd:
+- Khởi động dịch vụ httpd:
 
-[root@localhost ~]# /usr/local/httpd/bin/apachectl start
+**#/usr/local/httpd/bin/apachectl start**
 
-Xong các bước trên các bạn cài phần mềm w3m để lướt web trên giao diện dòng lệnh:
+- Xong các bước trên các bạn cài phần mềm w3m để lướt web trên giao diện dòng lệnh:
 
-[root@localhost ~]# yum install w3m
+**#yum install w3m**
 
-[root@localhost ~]# w3m localhost
+**#w3m localhost**
