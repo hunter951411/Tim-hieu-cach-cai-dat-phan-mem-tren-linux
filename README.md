@@ -144,76 +144,77 @@ Sau lệnh rebuild, gói binary vừa tạo ra được đặt trong /usr/src/re
 
 - Lệnh cài đặt EPEL Repository bằng YUM :
 
-Cách đơn giản nhất để cài đặt EPEL Repository là thông qua YUM, YUM sẽ tự động cài EPEL Repository cho server phù hợp với hệ điều hành và phiên bản của hệ điều hành :
+- Cách đơn giản nhất để cài đặt EPEL Repository là thông qua YUM, YUM sẽ tự động cài EPEL Repository cho server phù hợp với hệ điều hành và phiên bản của hệ điều hành :
 
-sudo yum install epel-release
+      sudo yum install epel-release
 
 ###Lệnh cài đặt EPEL Repository cho hệ điều hành 64bit :
 
 **CentOS 6 64bit :**
 
-sudo rpm -Uvh http://download.fedoraproject.org/pub/epel/6/x86_64/epel-release-6-8.noarch.rpm
-Lệnh cài đặt EPEL Repository cho hệ điều hành 32bit :
+      sudo rpm -Uvh http://download.fedoraproject.org/pub/epel/6/x86_64/epel-release-6-8.noarch.rpm
+
+###Lệnh cài đặt EPEL Repository cho hệ điều hành 32bit :
 
 **CentOS 6 32bit :**
 
-sudo rpm -Uvh http://download.fedoraproject.org/pub/epel/6/i386/epel-release-6-8.noarch.rpm
+      sudo rpm -Uvh http://download.fedoraproject.org/pub/epel/6/i386/epel-release-6-8.noarch.rpm
 
 ###Lệnh cài đặt REMI Repository (dùng chung cho hệ điều hành 32bit và 64bit) :
 
 **CentOS 7 (32bit + 64bit) :**
 
-sudo rpm -Uvh http://rpms.famillecollet.com/enterprise/remi-release-7.rpm
+      sudo rpm -Uvh http://rpms.famillecollet.com/enterprise/remi-release-7.rpm
 
 **CentOS 6 (32bit + 64bit) :**
 
-sudo rpm -Uvh http://rpms.famillecollet.com/enterprise/remi-release-6.rpm
+      sudo rpm -Uvh http://rpms.famillecollet.com/enterprise/remi-release-6.rpm
 
 **CentOS 5 (32bit + 64bit) :**
 
-sudo rpm -Uvh http://rpms.famillecollet.com/enterprise/remi-release-5.rpm
+      sudo rpm -Uvh http://rpms.famillecollet.com/enterprise/remi-release-5.rpm
 
-'REMI và EPEL là 2 Repository được sử dụng phổ biến nhất giúp bạn cài đặt hầu như tất cả các phần mềm thông dụng cho server bằng lệnh YUM'
+- REMI và EPEL là 2 Repository được sử dụng phổ biến nhất giúp bạn cài đặt hầu như tất cả các phần mềm thông dụng cho server bằng lệnh YUM
 
 ###Lệnh cài đặt RepoForge (RPMforge) Repository cho hệ điều hành 64bit :
 
 **CentOS 6 64bit :**
 
-sudo rpm -Uvh http://pkgs.repoforge.org/rpmforge-release/rpmforge-release-0.5.3-1.el6.rf.x86_64.rpm
+      sudo rpm -Uvh http://pkgs.repoforge.org/rpmforge-release/rpmforge-release-0.5.3-1.el6.rf.x86_64.rpm
 
 **CentOS 5 64bit :**
 
-sudo rpm -Uvh http://pkgs.repoforge.org/rpmforge-release/rpmforge-release-0.5.3-1.el5.rf.x86_64.rpm
+      sudo rpm -Uvh http://pkgs.repoforge.org/rpmforge-release/rpmforge-release-0.5.3-1.el5.rf.x86_64.rpm
 
 **CentOS 4 64bit :**
 
-sudo rpm -Uvh http://pkgs.repoforge.org/rpmforge-release/rpmforge-release-0.5.3-1.el4.rf.x86_64.rpm
+      sudo rpm -Uvh http://pkgs.repoforge.org/rpmforge-release/rpmforge-release-0.5.3-1.el4.rf.x86_64.rpm
 
 **CentOS 3 64bit :**
 
-sudo rpm -Uvh http://pkgs.repoforge.org/rpmforge-release/rpmforge-release-0.5.3-1.el3.rf.x86_64.rpm
+      sudo rpm -Uvh http://pkgs.repoforge.org/rpmforge-release/rpmforge-release-0.5.3-1.el3.rf.x86_64.rpm
 
 ###Lệnh cài đặt RepoForge (RPMforge) Repository cho hệ điều hành 32bit :
 
 **CentOS 6 32bit :**
 
-sudo rpm -Uvh http://pkgs.repoforge.org/rpmforge-release/rpmforge-release-0.5.3-1.el6.rf.i686.rpm
+      sudo rpm -Uvh http://pkgs.repoforge.org/rpmforge-release/rpmforge-release-0.5.3-1.el6.rf.i686.rpm
 
 **CentOS 5 32bit :**
 
-sudo rpm -Uvh http://pkgs.repoforge.org/rpmforge-release/rpmforge-release-0.5.3-1.el5.rf.i386.rpm
+      sudo rpm -Uvh http://pkgs.repoforge.org/rpmforge-release/rpmforge-release-0.5.3-1.el5.rf.i386.rpm
 
 **CentOS 4 32bit :**
 
-sudo rpm -Uvh http://pkgs.repoforge.org/rpmforge-release/rpmforge-release-0.5.3-1.el4.rf.i386.rpm
+      sudo rpm -Uvh http://pkgs.repoforge.org/rpmforge-release/rpmforge-release-0.5.3-1.el4.rf.i386.rpm
 
 **CentOS 3 32bit :**
 
-sudo rpm -Uvh http://pkgs.repoforge.org/rpmforge-release/rpmforge-release-0.5.3-1.el3.rf.i386.rpm
+      sudo rpm -Uvh http://pkgs.repoforge.org/rpmforge-release/rpmforge-release-0.5.3-1.el3.rf.i386.rpm
 
 ###Lệnh cài đặt Atomic Repository cho CentOS 6 64 bit
 
-sudo rpm -Uvh http://www6.atomicorp.com/channels/atomic/centos/6/x86_64/RPMS/atomic-release-1.0-19.el6.art.noarch.rpm
+      sudo rpm -Uvh http://www6.atomicorp.com/channels/atomic/centos/6/x86_64/RPMS/atomic-release-1.0-19.el6.art.noarch.rpm
 
 ###Những lệnh cơ bản của YUM
 
