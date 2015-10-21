@@ -138,14 +138,86 @@ Sau lệnh rebuild, gói binary vừa tạo ra được đặt trong /usr/src/re
 - Trên Centos mặc định là có sẵn lệnh **yum**. Để kiểm tra phiên bản lệnh yum ta dùng lệnh:
 
       **#yum --version**
+##1. Cài đặt các gói thông tin lưu trữ (Repository) cho YUM
 
-- Cài đặt các gói thông tin lưu trữ (Repository ) cho yum: Để cài được hầu hết các phần mềm phổ biến bằng lệnh YUM, cần phải bổ sung thêm các gói thông tin lưu trữ YUM bằng lệnh sau:
-<ul>
-<li>Lệnh cài đặt EPEL Repository bằng YUM: **#yum install epel-release**</li>
-<li>Lệnh cài đặt EPEL Repository cho HĐH CENTOS 64 bit: **#rpm -Uvh http://pkgs.repoforge.org/rpmforge-release/rpmforge-release-0.5.3-1.el4.rf.x86_64.rpm**</li>
-</ul>
+- Về cơ bản là YUM có rất nhiều thông tin các gói phần mềm thông dụng cho server. Tuy nhiên, đôi lúc sẽ có những phần mềm khác mà YUM không có sẵn trong gói cơ bản. Để cài được hầu hết các phần mềm phổ biến bằng YUM, bạn cần phải bổ sung thêm các gói thông tin lưu trữ cho YUM bằng những lệnh sau :
 
-##1. Lệnh yum check-update và yum list updates
+- Lệnh cài đặt EPEL Repository bằng YUM :
+
+Cách đơn giản nhất để cài đặt EPEL Repository là thông qua YUM, YUM sẽ tự động cài EPEL Repository cho server phù hợp với hệ điều hành và phiên bản của hệ điều hành :
+
+sudo yum install epel-release
+
+###Lệnh cài đặt EPEL Repository cho hệ điều hành 64bit :
+
+**CentOS 6 64bit :**
+
+sudo rpm -Uvh http://download.fedoraproject.org/pub/epel/6/x86_64/epel-release-6-8.noarch.rpm
+Lệnh cài đặt EPEL Repository cho hệ điều hành 32bit :
+
+**CentOS 6 32bit :**
+
+sudo rpm -Uvh http://download.fedoraproject.org/pub/epel/6/i386/epel-release-6-8.noarch.rpm
+
+###Lệnh cài đặt REMI Repository (dùng chung cho hệ điều hành 32bit và 64bit) :
+
+**CentOS 7 (32bit + 64bit) :**
+
+sudo rpm -Uvh http://rpms.famillecollet.com/enterprise/remi-release-7.rpm
+
+**CentOS 6 (32bit + 64bit) :**
+
+sudo rpm -Uvh http://rpms.famillecollet.com/enterprise/remi-release-6.rpm
+
+**CentOS 5 (32bit + 64bit) :**
+
+sudo rpm -Uvh http://rpms.famillecollet.com/enterprise/remi-release-5.rpm
+
+'REMI và EPEL là 2 Repository được sử dụng phổ biến nhất giúp bạn cài đặt hầu như tất cả các phần mềm thông dụng cho server bằng lệnh YUM'
+
+###Lệnh cài đặt RepoForge (RPMforge) Repository cho hệ điều hành 64bit :
+
+**CentOS 6 64bit :**
+
+sudo rpm -Uvh http://pkgs.repoforge.org/rpmforge-release/rpmforge-release-0.5.3-1.el6.rf.x86_64.rpm
+
+**CentOS 5 64bit :**
+
+sudo rpm -Uvh http://pkgs.repoforge.org/rpmforge-release/rpmforge-release-0.5.3-1.el5.rf.x86_64.rpm
+
+**CentOS 4 64bit :**
+
+sudo rpm -Uvh http://pkgs.repoforge.org/rpmforge-release/rpmforge-release-0.5.3-1.el4.rf.x86_64.rpm
+
+**CentOS 3 64bit :**
+
+sudo rpm -Uvh http://pkgs.repoforge.org/rpmforge-release/rpmforge-release-0.5.3-1.el3.rf.x86_64.rpm
+
+###Lệnh cài đặt RepoForge (RPMforge) Repository cho hệ điều hành 32bit :
+
+**CentOS 6 32bit :**
+
+sudo rpm -Uvh http://pkgs.repoforge.org/rpmforge-release/rpmforge-release-0.5.3-1.el6.rf.i686.rpm
+
+**CentOS 5 32bit :**
+
+sudo rpm -Uvh http://pkgs.repoforge.org/rpmforge-release/rpmforge-release-0.5.3-1.el5.rf.i386.rpm
+
+**CentOS 4 32bit :**
+
+sudo rpm -Uvh http://pkgs.repoforge.org/rpmforge-release/rpmforge-release-0.5.3-1.el4.rf.i386.rpm
+
+**CentOS 3 32bit :**
+
+sudo rpm -Uvh http://pkgs.repoforge.org/rpmforge-release/rpmforge-release-0.5.3-1.el3.rf.i386.rpm
+
+###Lệnh cài đặt Atomic Repository cho CentOS 6 64 bit
+
+sudo rpm -Uvh http://www6.atomicorp.com/channels/atomic/centos/6/x86_64/RPMS/atomic-release-1.0-19.el6.art.noarch.rpm
+
+###Những lệnh cơ bản của YUM
+
+##2. Lệnh yum check-update và yum list updates
 
 - Là lệnh có chức năng tương tự như nhau là dùng để cập nhật thông tin và danh sách các gói phần mềm được hỗ trợ cài đặt bằng lệnh YUM. Lưu ý là dòng lệnh này không cài đặt phần mềm mà chỉ là cập nhật danh sách các phần mềm được hỗ trợ của YUM. Cú pháp:
 
@@ -153,7 +225,7 @@ Sau lệnh rebuild, gói binary vừa tạo ra được đặt trong /usr/src/re
 
       **#yum list updates**
 
-##2. Lệnh yum list all và yum list
+##3. Lệnh yum list all và yum list
 
 - Là lệnh dùng để liệt kê tất cả các gói phần mềm có thể được cài đặt bằng lệnh YUM và những phần mềm đã được cài đặt. Cú pháp:
 
@@ -161,39 +233,38 @@ Sau lệnh rebuild, gói binary vừa tạo ra được đặt trong /usr/src/re
 
       **#yum list**
 
-##3. Lệnh yum list installed
+##4. Lệnh yum list installed
 
 - Là lệnh liệt kê tất cả các phần mềm đã được cài đặt. Nếu bạn muốn kiểm tra phần mềm nào đó đã cài đặt hay chưa thì có thể dùng lệnh sau :
 
       **#yum list installed tên_phần_mềm**
 
-##4. Lệnh yum list available
+##5. Lệnh yum list available
 
 - Là lệnh liệt kê tất cả các phần mềm có thể cài đặt bằng lệnh YUM. Cú pháp:
 
       **#yum list available**
 
-##5. Lệnh yum info
+##6. Lệnh yum info
 
-- Là lệnh dùng để xem thông tin của gói phần mềm. Ví dụ lệnh trên là để xem thông tin của phần mềm nginx. Cú pháp:
+- Là lệnh dùng để xem thông tin của phần mềm. Cú pháp:
 
-      **#yum info nginx**
+      **#yum info tên_phần_mềm**
 
+##7. Lệnh yum search
 
-##6. Lệnh yum search
-
-- Là lệnh dùng để tìm kiếm gói phần mềm được hỗ trợ cài đặt bằng yum. Ví dụ lệnh trên là để tìm phần mềm nginx, tất cả những phần mềm có tên file hoặc thông tin có chứa ký tự nginx sẽ được liệt kê bên dưới. Cú pháp:
+- Là lệnh dùng để tìm kiếm gói phần mềm được hỗ trợ cài đặt bằng yum. Cú pháp:
 
       **#yum search tên_phần_mềm**
 
-##7. Lệnh yum install
+##8. Lệnh yum install
 
 - Là lệnh dùng để cài đặt gói phần mềm do bạn chỉ định. Cú pháp:
 
       **#yum install tên_phần_mềm**
 
 
-##8. Lệnh yum update
+##9. Lệnh yum update
 
 - Là lệnh dùng để kiểm tra và cập nhật phiên bản mới nhất của gói phần mềm. Nó sẽ cập nhật phiên bản mới nhất cho tất cả các gói phần mềm đã được cài đặt trên server. 
  
@@ -204,13 +275,13 @@ Sau lệnh rebuild, gói binary vừa tạo ra được đặt trong /usr/src/re
       **#yum update tên_phần_mềm**
 
 
-##9. Lệnh yum remove
+##10. Lệnh yum remove
 
 - Là lệnh dùng để gỡ bỏ và xoá gói phần mềm do bạn chỉ định.
 
       **#yum remove tên_phần_mềm**
       
-##10.Lệnh yum clean all
+##11. Lệnh yum clean all
 
 - Thông thường YUM sẽ tạo và sử dụng cache cho các lần truy vấn, để xoá hết cache của yum thì bạn chạy lệnh sau :
 
