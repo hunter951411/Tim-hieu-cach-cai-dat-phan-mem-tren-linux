@@ -134,5 +134,84 @@ Sau lệnh rebuild, gói binary vừa tạo ra được đặt trong /usr/src/re
 ##3.5 Cài đặt với YUM
 
 - YUM (Yellowdog Updater Modified) là phương pháp cài đặt phần mềm có xu hướng tự động hóa và tập trung hóa. Người dùng chỉ việc đánh lệnh, và yum sẽ kết nối với server cập nhập, cài đặt hay gỡ bỏ phần mềm dựa trên những thông tin về các gói cài đặt sẵn có trên Interner
-- Các thông số:
-Cài đặt/Cập nhập/Gỡ bỏ cơ bản
+
+- Trên Centos mặc định là có sẵn lệnh **yum**. Để kiểm tra phiên bản lệnh yum ta dùng lệnh:
+
+      **#yum --version**
+
+- Cài đặt các gói thông tin lưu trữ (Repository ) cho yum: Để cài được hầu hết các phần mềm phổ biến bằng lệnh YUM, cần phải bổ sung thêm các gói thông tin lưu trữ YUM bằng lệnh sau:
+<ul>
+<li>Lệnh cài đặt EPEL Repository bằng YUM: **#yum install epel-release**</li>
+<li>Lệnh cài đặt EPEL Repository cho HĐH CENTOS 64 bit: **#rpm -Uvh http://pkgs.repoforge.org/rpmforge-release/rpmforge-release-0.5.3-1.el4.rf.x86_64.rpm**</li>
+</ul>
+
+##1. Lệnh **yum check-update** và **yum list updates**
+
+- Là lệnh có chức năng tương tự như nhau là dùng để cập nhật thông tin và danh sách các gói phần mềm được hỗ trợ cài đặt bằng lệnh YUM. Lưu ý là dòng lệnh này không cài đặt phần mềm mà chỉ là cập nhật danh sách các phần mềm được hỗ trợ của YUM. Cú pháp:
+
+      **#yum check-update**
+
+      **#yum list updates**
+
+##2. Lệnh **yum list all và **yum list**
+
+- Là lệnh dùng để liệt kê tất cả các gói phần mềm có thể được cài đặt bằng lệnh YUM và những phần mềm đã được cài đặt. Cú pháp:
+
+      **#yum list all**
+
+      **#yum list**
+
+##3. Lệnh **yum list installed**
+
+- Là lệnh liệt kê tất cả các phần mềm đã được cài đặt. Nếu bạn muốn kiểm tra phần mềm nào đó đã cài đặt hay chưa thì có thể dùng lệnh sau :
+
+      **#yum list installed tên_phần_mềm**
+
+##4. Lệnh **yum list available**
+
+- Là lệnh liệt kê tất cả các phần mềm có thể cài đặt bằng lệnh YUM. Cú pháp:
+
+      **#yum list available**
+
+##5. Lệnh **yum info**
+
+- Là lệnh dùng để xem thông tin của gói phần mềm. Ví dụ lệnh trên là để xem thông tin của phần mềm nginx. Cú pháp:
+
+      **#yum info nginx**
+
+
+##6. Lệnh **yum search**
+
+- Là lệnh dùng để tìm kiếm gói phần mềm được hỗ trợ cài đặt bằng yum. Ví dụ lệnh trên là để tìm phần mềm nginx, tất cả những phần mềm có tên file hoặc thông tin có chứa ký tự nginx sẽ được liệt kê bên dưới. Cú pháp:
+
+      **#yum search tên_phần_mềm**
+
+##7. Lệnh **yum install**
+
+- Là lệnh dùng để cài đặt gói phần mềm do bạn chỉ định. Cú pháp:
+
+      **#yum install tên_phần_mềm**
+
+
+##8. Lệnh **yum update**
+
+- Là lệnh dùng để kiểm tra và cập nhật phiên bản mới nhất của gói phần mềm. Nó sẽ cập nhật phiên bản mới nhất cho tất cả các gói phần mềm đã được cài đặt trên server. 
+ 
+      **#yum update**
+
+- Nếu bạn muốn chỉ kiểm tra và cập nhật phiên bản mới nhất cho 1 phần mềm bạn chỉ định thì sử dụng lệnh: 
+
+      **#yum update tên_phần_mềm**
+
+
+##9. Lệnh **yum remove**
+
+- Là lệnh dùng để gỡ bỏ và xoá gói phần mềm do bạn chỉ định.
+
+      **#yum remove tên_phần_mềm**
+      
+##10.Lệnh **yum clean all**
+
+- Thông thường YUM sẽ tạo và sử dụng cache cho các lần truy vấn, để xoá hết cache của yum thì bạn chạy lệnh sau :
+
+      **#yum clean all**
